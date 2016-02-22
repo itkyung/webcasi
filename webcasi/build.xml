@@ -1,0 +1,103 @@
+<project basedir="." default="real">
+
+	<!--
+		===================================================================
+	-->
+	<!--
+		Compiler Options
+	-->
+	<!--
+		===================================================================
+	-->
+	<!-- Should Java compilations set the 'debug' compiler option? -->
+	<property name="compile.debug" value="true" />
+	<!-- Should Java compilations set the 'optimize' compiler option? -->
+	<property name="compile.optimize" value="true" />
+
+	<!--
+		===================================================================
+	-->
+	<!--
+		Project Properties
+	-->
+	<!--
+		===================================================================
+	-->
+	<property environment="env" />
+	<property name="name" value="webcasi" />
+	<property name="author" value="bizwave" />
+	<property name="tomcat.lib" value="C:\webcasi\tomcat-lib" />
+	<property name="src.dir" value="src" />
+	<property name="resource.dir" value="src/main/resources"/>
+	<property name="build.dir" value="build" />
+	<property name="dist.dir" value="dist" />
+	<property name="mavenRepository" value="C:\webcasi\maven-repo"/>
+
+	<target name="init">
+		
+		<delete dir="${dist.dir}" />
+		<delete dir="${build.dir}" />
+		
+		<copy todir="${build.dir}">
+			<fileset dir="src/main/webapp">
+				<include name="**/**" />
+				<exclude name=".*/**" />
+				<exclude name="**/.*" />
+				<exclude name="WEB-INF/classes/**" />
+				
+			</fileset>
+		</copy>
+		
+		<mkdir dir="${build.dir}/WEB-INF" />
+		<mkdir dir="${build.dir}/WEB-INF/classes" />
+		<mkdir dir="${build.dir}/WEB-INF/lib" />
+		
+		<copy todir="${build.dir}/WEB-INF/classes">
+			<fileset dir="${resource.dir}">
+				<include name="**/**" />
+				<exclude name="**/*.java" />
+				
+			</fileset>
+		</copy>
+		<copy todir="${build.dir}/WEB-INF/lib">
+			<fileset dir="${mavenRepository}">
+				<include name="**/*.jar" />
+				<exclude name="**/jsp-api-2.1.jar" />
+				<exclude name="**/servlet-api-2.5.jar" />
+				<exclude name="**/hibernate-core-3.6.10.Final.jar" />
+				<exclude name="**/hibernate-entitymanager-3.6.10.Final.jar" />
+				<exclude name="**/ehcache-core-2.3.1.jar" />
+			</fileset>
+			<flattenmapper/>
+		</copy>
+		
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="${src.dir}" destdir="${build.dir}/WEB-INF/classes" encoding="utf-8"
+				debug="${compile.debug}" optimize="${compile.optimize}">
+			<classpath>
+				<fileset dir="${tomcat.lib}">
+					<include name="**/**.jar" />
+				</fileset>
+				<fileset dir="${build.dir}/WEB-INF/lib">
+					<include name="**/**.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+	
+	<target name="real" depends="compile">
+		<mkdir dir="${dist.dir}" />
+
+		<jar destfile="${dist.dir}/${name}.war">
+			<manifest>
+				<attribute name="Built-By" value="${author}"/>
+			</manifest>
+			<fileset dir="${build.dir}">
+				<include name="**/**" />
+			</fileset>
+		</jar>
+	</target>
+
+</project>

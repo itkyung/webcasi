@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/webcasi" distributable="true" reloadable="true">
+	
+    <ResourceLink name="jdbc/webcasi" global="jdbc/webcasi" type="javax.sql.DataSource" />
+		
+	<Loader loaderClass="org.springframework.instrument.classloading.tomcat.TomcatInstrumentableClassLoader" />
+</Context>

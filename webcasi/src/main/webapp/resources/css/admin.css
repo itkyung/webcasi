@@ -1,0 +1,50 @@
+img { border : 0 }
+
+
+body {
+	height : 100%;
+    margin : 0px auto;
+    font-size : 0.625em;  
+    line-height : 1.8em;    
+    
+    /* font-family: 'Arial Unicode MS','Malgun Gothic',Verdana; */
+    /*
+    font-family : 나눔고딕,NanumGothic,'맑은고딕','Malgun Gothic',Tahoma,Helvetica,Arial,'Lucida Grande',"hiragino kaku gothic pro", AppleGothic,Dotum,돋움,굴림,Gulim,sans-serif;
+    */
+    
+    font-family : "Helvetica Neue", 'Helvetica', '나눔고딕',nanumgothic,'굴림',gulim,AppleGothic;
+    color : #3D414A;
+}
+
+a {
+	text-decoration : none;	
+	color : black;
+}
+
+a:hover{
+	text-decoration : underline;
+}
+
+#group-container button{
+	float : right;
+	width : 70px;
+	height : 25px;
+}
+
+	
+#questionGroupForm fieldset {width:98%;}
+#questionGroupForm label {width:100px;display:block;float:left;}
+#questionGroupForm li {margin:5px; list-style: none;}
+#questionGroupForm input  {text-align: left;}
+
+
+#questionForm fieldset {width:98%;}
+#questionForm .label {width:100px;display:block;float:left;}
+#questionForm li {margin:5px; list-style: none;}
+#questionForm input  {text-align: left;}
+
+#questionItemForm fieldset {width:98%;}
+#questionItemForm label {width:100px;display:block;float:left;}
+#questionItemForm li {margin:5px; list-style: none;}
+#questionItemForm input  {text-align: left;}
+#questionItemForm #itemObjAdd-item {display:block;float:right;}

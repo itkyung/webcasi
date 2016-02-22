@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/views/decorators">
+	<excludes>
+		<pattern>/resources/*</pattern>
+		<pattern>/error/*</pattern>
+		<pattern>/loading</pattern>
+		<pattern>/member/checkup/secondDepth/*</pattern>
+		<pattern>/member/checkup/thirdDepth/*</pattern>
+		<pattern>/member/checkup/custom/*</pattern>
+		<pattern>/member/checkup/help/*</pattern>
+		<pattern>/member/checkup/nutrition/secondDepth*</pattern>
+		<pattern>/nurse/secondDepth/*</pattern>
+		<pattern>/nurse/thirdDepth/*</pattern>
+		<pattern>/nurse/nutrition/*</pattern>
+		<pattern>/member/checkup/viewProgress</pattern>
+		<pattern>/nurse/custom/*</pattern>
+		<pattern>/member/protectionForm</pattern>
+		<pattern>/member/resultRequestForm</pattern>
+		<pattern>/member/zipCodeForm</pattern>
+	</excludes>
+	<!--  
+	<decorator name="login" page="login/default.jsp">
+    	<pattern>/login/*</pattern>
+    </decorator>
+    -->
+    <decorator name="member" page="member/default.jsp">
+    	<pattern>/member/*</pattern>
+    </decorator>
+
+    <decorator name="admin" page="admin/default.jsp">
+    	<pattern>/admin/*</pattern>
+    </decorator>
+    
+    <decorator name="nurse" page="nurse/default.jsp">
+    	<pattern>/nurse/*</pattern>
+    </decorator>
+           
+    <decorator name="anonymous" page="anonymous/default.jsp">
+    	<pattern>/an/*</pattern>
+    </decorator> 
+    
+    <decorator name="guide" page="guide/default.jsp">
+    	<pattern>/guide/*</pattern>
+    </decorator>
+    
+    <decorator name="default" page="default.jsp">
+    	<pattern>/*</pattern>
+    </decorator>
+    
+
+</decorators>

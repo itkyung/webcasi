@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+	<diskStore path="java.io.tmpdir"/>
+	
+	<defaultCache 
+		 maxElementsInMemory="500000"
+         eternal="false"
+         timeToIdleSeconds="12000"
+         timeToLiveSeconds="12000"
+         overflowToDisk="false"
+         maxElementsOnDisk="10000000"
+         diskPersistent="false"
+         diskExpiryThreadIntervalSeconds="120"
+         memoryStoreEvictionPolicy="LRU"
+         />
+    
+    <cache name="IDENTITY"
+    	 maxElementsInMemory="1000"
+         eternal="false"
+         timeToIdleSeconds="12000"
+         timeToLiveSeconds="12000"
+         overflowToDisk="false"
+         maxElementsOnDisk="10000000"
+         diskPersistent="false"
+         diskExpiryThreadIntervalSeconds="120"
+         memoryStoreEvictionPolicy="LRU"
+         />
+    
+    <cache name="MASTER"
+    	 maxElementsInMemory="100000"
+         eternal="false"
+         timeToIdleSeconds="120000"
+         timeToLiveSeconds="120000"
+         overflowToDisk="false"
+         maxElementsOnDisk="10000000"
+         diskPersistent="false"
+         diskExpiryThreadIntervalSeconds="120"
+         memoryStoreEvictionPolicy="LRU"
+         />
+         
+     <cache name="MASTER_COLLECTION"
+    	 maxElementsInMemory="100000"
+         eternal="false"
+         timeToIdleSeconds="120000"
+         timeToLiveSeconds="120000"
+         overflowToDisk="false"
+         maxElementsOnDisk="10000000"
+         diskPersistent="false"
+         diskExpiryThreadIntervalSeconds="120"
+         memoryStoreEvictionPolicy="LRU"
+         />
+         
+    <cache name="INSTANCE"
+    	 maxElementsInMemory="10000"
+         eternal="false"
+         timeToIdleSeconds="12000"
+         timeToLiveSeconds="12000"
+         overflowToDisk="false"
+         maxElementsOnDisk="10000000"
+         diskPersistent="false"
+         diskExpiryThreadIntervalSeconds="120"
+         memoryStoreEvictionPolicy="LRU"
+         />
+                      
+</ehcache>

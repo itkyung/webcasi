@@ -1,0 +1,74 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
+<%@ taglib uri="http://www.opensymphony.com/sitemesh/page" prefix="page" %>
+
+
+<script>
+	
+	var _currentCategoryType = "${_currentCategoryType}";
+	
+	function goCategory(categoryType,order){
+		document.location.href="${pageContext.request.contextPath}/nurse/category/" + categoryType + "?instanceId=" + _instanceId + "&patientNo=" + _patientNo;
+	}
+	
+	$(document).ready(function(){
+		if(_currentCategoryType != ""){
+			var image = $("#"+_currentCategoryType).attr("src");
+			var prefix = image.substring(0,image.indexOf(".png"));
+			$("#"+_currentCategoryType).attr("src",prefix+"_on.png");
+		}
+	});
+
+</script>
+
+<div class="left-menu-img">
+	<c:choose>
+		<c:when test="${empty _currentCategoryType}">
+			<img src="${pageContext.request.contextPath}/resources/images/page_left/menu_top.png"/>
+		</c:when>
+		<c:otherwise>
+			<img src="${pageContext.request.contextPath}/resources/images/page_left/menu_top_${_currentCategoryType}.png"/>
+		</c:otherwise>
+	</c:choose>
+</div>
+	
+		<div class="leftMenuRow">
+			<a href="javascript:goCategory('CHECK_LIST',0)"><img src="${pageContext.request.contextPath}/resources/images/page_left/menu_01.png" id="CHECK_LIST"></a>
+		</div>
+		
+		<div class="leftMenuRow">
+			<a href="javascript:goCategory('HEALTH_CHECKUP',1)"><img src="${pageContext.request.contextPath}/resources/images/page_left/menu_02.png" id="HEALTH_CHECKUP"></a>
+		</div>
+		
+		<div class="leftMenuRow">
+			<a href="javascript:goCategory('MENTAL_HEALTH',2)"><img src="${pageContext.request.contextPath}/resources/images/page_left/menu_03.png" id="MENTAL_HEALTH"></a>
+		</div>
+		
+		<c:if test="${_goNutrition eq true}">
+			<div class="leftMenuRow">
+				<a href="javascript:goCategory('NUTRITION',3)"><img src="${pageContext.request.contextPath}/resources/images/page_left/menu_04.png" id="NUTRITION"></a>
+			</div>
+		</c:if>
+
+		<c:if test="${_samsungEmployee eq true}">
+			<div class="leftMenuRow">
+				<a href="javascript:goCategory('HEALTH_AGE',4)"><img src="${pageContext.request.contextPath}/resources/images/page_left/menu_05.png" id="HEALTH_AGE"></a>
+			</div>
+		</c:if>
+		
+		<c:if test="${_needStressTest eq true}">
+			<div class="leftMenuRow">
+				<a href="javascript:goCategory('SLEEP',5)"><img src="${pageContext.request.contextPath}/resources/images/page_left/menu_06.png" id="SLEEP"></a>
+			</div>
+		</c:if>
+		
+		<c:if test="${_needSleepTest eq true}">
+			<div class="leftMenuRow">
+				<a href="javascript:goCategory('STRESS',6)"><img src="${pageContext.request.contextPath}/resources/images/page_left/menu_07.png" id="STRESS"></a>
+			</div>
+		</c:if>
+	
+
+
+

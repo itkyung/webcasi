@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:util="http://www.springframework.org/schema/util" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd 
+	http://www.springframework.org/schema/context  
+	http://www.springframework.org/schema/context/spring-context-3.1.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util-3.1.xsd"
+	>
+	
+	<util:properties id="defaultConfig" location="classpath:/META-INF/webcasi.properties"/> 
+	<context:property-placeholder location="classpath:/META-INF/webcasi.properties" />
+	
+	 <!--  Container에 정의된 JNDI기반의 데이타 소스를 연결한다. -->
+	<jee:jndi-lookup id="dataSource" jndi-name="jdbc/webcasi" resource-ref="true"/>
+	
+	<context:component-scan base-package="com.kbsmc" use-default-filters="true">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	
+	<!-- Persisetance.xml에 정의된 persistance unit과 dataSource를 기반으로 EntityManagerFactory를 초기화한다.  -->
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="persistenceUnitName" value="webcasipu"/>
+		<property name="jpaProperties">
+	        <props>
+	            <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+	            <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+	            <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+	            <prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
+	            <prop key="hibernate.cache.use_query_cache">${hibernate.cache.use_query_cache}</prop>
+	            <prop key="hibernate.cache.region.factory_class">${hibernate.cache.region.factory_class}</prop> 	 
+	            <prop key="hibernate.cache.use_second_level_cache">${hibernate.cache.use_second_level_cache}</prop>
+	            <prop key="hibernate.cache.provider_configuration_file_resource_path">${hibernate.cache.provider_configuration_file_resource_path}</prop>
+	            <prop key="hibernate.max_fetch_depth">${hibernate.max_fetch_depth}</prop>
+	            <prop key="hibernate.enable_lazy_load_no_trans">true</prop>
+	        </props>
+	    </property>
+	</bean>
+
+<!-- JPA Transaction Manager를 활성화  -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory"/>
+	</bean>
+
+
+<!-- @Configurable을 사용하기 위해서 설정한다. load-time-weaver 활성화 -->	
+	<context:load-time-weaver/>
+
+<!-- @Configuraable이 붙은 빈을 읽어들인다. -->	
+	<context:spring-configured/>
+
+
+<!--  Transactional annotation을 이용한 트랜잭션 관리를 한다. -->
+<!--  DAO와 Sevice클래스들이 Interface를 쌍으로 다 가지고 있으면 proxy-target-class설정이 없어도 interface-based proxy에 의해서 구동된다. -->
+<!--  proxy-target-class를 true로 해서 class-based proxy형태로 transaction이 적용되게한다.  -->
+	<tx:annotation-driven proxy-target-class="true" transaction-manager="transactionManager" mode="aspectj"/>
+	
+<!-- @Configurable 같은 기능을 이용해서 동적인 Instance에 DI를 삽입하기 위해서 AspectJ를 이용하는데 이렇게 AspectJ를 통한 호출에도
+		 @Transactional이 구동되기 위해서는 tx:annotation-driven의  mode="aspectj" 로 해주어야한다. 아니면 그냥 디폴트 또는 proxy -->
+	
+	<!--  AspectJ를 지원한다. Aspect에 의해서 advised되는 bean들에 auto proxing객체가 생성되게한다.  -->
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+	<!--  AjspectJ가 CGLib class based proxy를 생성하게 한다. -->
+	<aop:config proxy-target-class="true"/>
+	
+		
+</beans>

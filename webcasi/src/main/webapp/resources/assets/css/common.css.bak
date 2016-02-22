@@ -1,0 +1,103 @@
+﻿@charset "utf-8";
+body {background-color: #fff;  overflow-x: hidden !important;  min-width:1000px;  font: normal 12px Arial, Dotum, "돋움", Gulim, "굴림", sans-serif; line-height:1.6; color:#010101; }
+body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, form, fieldset, input, table, tr, th, td{margin:0;padding:0}
+h1, h2, h3, h4, h5, h6{font-weight:normal;font-size:100%}
+ul, ol, li{list-style:none}
+fieldset, img{border:none; vertical-align:middle; }
+em { font-style: normal;}
+a {color:#424242;}
+
+a:link {text-decoration:none;}
+
+.left15 {margin-left:15px;}
+.bgPup {background:#210D43;}
+.ftPup {color:#64137C !important;}
+.ftWhite {color:#fff !important;}
+
+.content { width:100%;  padding:30px; overflow: hidden; border:1px solid #dedede; border-left:0; border-top:0;}
+
+/* main */
+div.main {width:620px; height:761px; text-align:center; margin:auto; background:white url(../images/bg_main_01.png) no-repeat left 20px top 20px; border:1px solid #dedede; }
+div.main div.img01 {margin:70px 0 0 60px; text-align:left;}
+div.main div.text01 {width:183px; height:36px; line-height:36px; vertical-align:middle; font-size:19px; margin:30px 0 0 80px; background:white url(../images/img_main_01.png) no-repeat left top;}
+div.main div.text02 {width:183px; height:36px; margin:20px 0 0 95px;}
+
+
+/* guide01 */
+div.guide01 {width:620px; text-align:center; padding:20px; margin:auto; border:1px solid #dedede;}
+div.guide01 span {display:block;}
+div.guide01 div.guide01_top {width:100%; height:70px; font-size:25px; padding:10px 0 0 0; text-align:left; color:#40349F; font-weight:bold; font: normal YGO145 !important;}
+div.guide01 div.guide01_top span.line_2 {padding-left:10px;}
+div.guide01 div.guide01_top span.line_2 em {font-size:30px !important;}
+div.guide01 div.guide01_mid_1 {width:100%; height:280px; margin-top:20px; text-align:left; background:white url(../images/bg_guide_01.png) no-repeat left 200px top;}
+div.guide01 div.guide01_mid_2 {height:295px; padding:15px 15px 10px 15px; margin:40px 10px 0 10px; background: #F4F4F4; border:1px solid #D6D6D6;}
+div.guide01 div.guide01_bottom {height:100px; margin:20px 0 10px 0;}
+
+div.guide01 div.guide01_mid_1 div.left {float:left; width:350px; height:100%; display:inline-block; padding-left:10px; font: normal Dotum !important; letter-spacing:0.5px;}
+div.guide01 div.guide01_mid_1 div.left span img{margin-right:10px; margin-bottom:20px;}
+div.guide01 div.guide01_mid_1 div.right {float:right; width:250px; height:100%;  display:inline-block; margin-right:10px;}
+div.guide01 div.guide01_mid_1 div.right div.rt_img {width:100%; height:180px; display:block; text-align:right; }
+div.guide01 div.guide01_mid_1 div.right div.rt_img img {margin-top:9px;}
+div.guide01 div.guide01_mid_1 div.right div.rb_img {width:100%; height:91px; margin-top:6px; text-align:right; display:block;}
+div.guide01 div.guide01_mid_1 div.right div.rb_img li{width:71px; height:100%; margin-left:7px; display:inline-block;  cursor:pointer;}
+
+div.guide01 div.guide01_mid_2 span {text-align:left; letter-spacing:1px;}
+div.guide01 div.guide01_mid_2 span.mid2_f {color:#630E8B; font-weight:bold; font:normal Gulim !important; text-decoration: underline; text-align:center;}
+div.guide01 div.guide01_mid_2 span.box {background:url(../images/icon_box_pupple.png) no-repeat left top 5px; padding-left:15px;}
+div.guide01 div.guide01_mid_2 span.mid2_last {width:325px; margin:0 auto 0 10px; padding-left:10px; padding-right:10px;}
+
+
+div.guide01 div.guide01_bottom div.left {width:75px; float:left; display:inline-block;}
+div.guide01 div.guide01_bottom div.right {width: 520px; height:100%; display:inline-block; text-align:left;}
+div.guide01 div.guide01_bottom div.right li.last{margin-top:10px; letter-spacing:0.5px;}
+
+/* guide02 */
+div.guide02 {width:620px; text-align:center; margin:auto;  border:1px solid #dedede;}
+div.guide02 div.guide02_top {width:100%; height:100px;}
+div.guide02 div.guide02_main {width:100%; height:702px; margin-top:20px; background:white url(../images/bg_guide02_01.png) no-repeat left 20px top 25px;}
+
+div.guide02 div.guide02_top div.left {float:left; width:71px; margin:25px 0 0 25px; display:inline-block;}
+div.guide02 div.guide02_top div.right {float:right; width:485px; height: 91px; margin:25px 26px 0 0; display:inline-block; }
+div.guide02 div.guide02_top div.right span {display:block; text-align:left;}
+div.guide02 div.guide02_top div.right span.line1 {margin:5px 0 0 0 ; font-weight:bold; font: normal YGO145 !important; font-size:25px; color:#521898; background:url(../images/img_guide02_under.png) repeat-x  left top 36px;}
+div.guide02 div.guide02_top div.right span.line1 em {font-size:22px;}
+div.guide02 div.guide02_top div.right span.line2 {padding-left:25px; margin-top:5px; line-height:1.4em; background:url(../images/icon_guide02_imp.png) no-repeat  left 10px top 1px;}
+
+div.guide02 div.guide02_main div.sub_title {color:#fff; font-size:14px; text-align:left; margin-left:39px; padding-top:51px; font-weight:bold; font: normal YGO145 !important;}
+div.guide02 div.guide02_main div.sub_main {margin:35px 30px 0 30px;}
+div.guide02 div.guide02_main div.sub_main div.sub_1 {display:inline-block; text-align:center;}
+div.guide02 div.guide02_main div.sub_main div.sub_1 span{display:block; font-weight:bold; background:url(../images/img_guide02_input.png) no-repeat  left 35px top;}
+div.guide02 div.guide02_main div.sub_main div.sub_1 img{padding-top:10px; display:block;}
+
+div.guide02 div.guide02_main div.sub_main_2 {margin:25px 30px 0 30px;}
+div.guide02 div.guide02_main div.sub_main_2 div.sub_2 {display:inline-block; text-align:center; margin-right:5px;margin-left:5px;}
+div.guide02 div.guide02_main div.sub_main_2 div.sub_2 span{display:block; font-weight:bold; background:url(../images/guide2_2_2.png) no-repeat  left 45px top;}
+div.guide02 div.guide02_main div.sub_main_2 div.sub_2 img{padding-top:5px; display:block;}
+
+div.guide02 div.guide02_main div.sub_main_2 div.sub_3 {display:inline-block; text-align:center; margin-top:10px;}
+div.guide02 div.guide02_main div.sub_main_2 div.sub_3 span{display:block; font-weight:bold; background:url(../images/guide2_2_5.png) no-repeat  left 25px top;}
+div.guide02 div.guide02_main div.sub_main_2 div.sub_3 span.not {visibility:hidden;}
+div.guide02 div.guide02_main div.sub_main_2 div.sub_3 img{padding-top:5px; display:block;}
+
+div.guide02_3 {width:620px; text-align:center; margin:auto;  border:1px solid #dedede;}
+div.guide02_3 div.guide02_3_top {width:100%; height:200px;}
+div.guide02_3 div.guide02_3_main {width:100%; height:600px; margin-top:20px; padding-top:1px; background:white url(../images/guide_02_03_bg.png) no-repeat left 30px top 10px; }
+
+div.guide02_3 div.guide02_3_top div.left {float:left; width:71px; margin:25px 0 0 25px; display:inline-block;}
+div.guide02_3 div.guide02_3_top div.right {float:right; width:485px; height: 91px; margin:25px 26px 0 0; display:inline-block; }
+div.guide02_3 div.guide02_3_top div.right span {display:block; text-align:left;}
+div.guide02_3 div.guide02_3_top div.right span.line1 {margin:5px 0 0 0 ; font-weight:bold; font: normal YGO145 !important; font-size:22px; color:#521898; background:url(../images/img_guide02_under.png) repeat-x  left top 36px;}
+div.guide02_3 div.guide02_3_top div.right span.line1 em {font-size:25px;}
+div.guide02_3 div.guide02_3_top div.right span.line2 {padding-left:25px; margin-top:5px; line-height:1.4em; background:url(../images/icon_guide02_imp.png) no-repeat  left 10px top 1px;}
+div.guide02_3 div.guide02_3_top div.right span.line2 em {text-decoration: underline; color:#64137C !important; font-weight:bold;}
+div.guide02_3 div.guide02_3_top div.right span.line3 {padding-left:25px; margin-top:5px; line-height:1.7em;}
+div.guide02_3 div.guide02_3_top div.right span.line4 {padding-left:35px; margin-top:5px;}
+
+div.guide02_3 div.guide02_3_main div.sub_main_2 {margin:25px 30px 0 30px;}
+div.guide02_3 div.guide02_3_main div.sub_main_2 div.sub_2 {display:inline-block; text-align:center; margin-right:5px;margin-left:5px; padding-top:5px;}
+div.guide02_3 div.guide02_3_main div.sub_main_2 div.sub_2 span{display:block; font-weight:bold; width:100%; background:url(../images/guide2_02_3_1.png) no-repeat  left 35px top;}
+div.guide02_3 div.guide02_3_main div.sub_main_2 div.sub_2 span.not {visibility:hidden;}
+div.guide02_3 div.guide02_3_main div.sub_main_2 div.sub_2 img{padding-top:5px; display:block;}
+
+div.guide02_3 div.guide02_3_main div.sub_main_2 div.sub_3 {display:inline-block; text-align:center;}
+div.guide02_3 div.guide02_3_main div.sub_main_2 div.sub_3 img{padding-top:5px; display:block; margin:0 auto;}

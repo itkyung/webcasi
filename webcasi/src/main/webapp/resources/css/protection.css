@@ -1,0 +1,177 @@
+#protection-body{
+	font-size : 15px;
+	margin : 0 auto;
+	width : 700px;
+	background-color : white;
+	
+}
+
+#protection-intro{
+	border : 1px solid #2c0b64;
+	margin-bottom : 10px;
+}
+
+#protection-sms{
+	border : 1px solid #2c0b64;
+	margin-bottom : 10px;
+}
+.protection-title{
+	height : 30px;
+	line-height : 30px;
+	font-size : 17px;
+	font-weight : bold;
+	text-align : center;
+	background-color : #2c0b64;
+	color : white;
+}
+
+.protection-row {
+	min-height : 30px;
+	overflow : auto;
+	border-top : 1px solid #2c0b64;
+	padding-left : 5px;
+	padding-right : 5px;
+}
+
+.protection-button{
+	text-align : right;
+}
+.protection-row input{
+	font-size : 13px;
+	line-height : 13px;
+	border : 1px solid #cec9c0;
+	padding : 3px;	
+	
+}
+
+#search-zipcode-form{
+	width : 480px;
+	margin-bottom : 10px;
+	font-size : 15px;
+	border : 1px solid #89868f;
+}
+.protection-small-col{
+	width : 168px;
+	float : left;
+	overflow : auto;
+	min-height : 30px;
+	
+}
+
+.protection-medium-col{
+	width : 340px;
+	float : left;
+	overflow : auto;
+	min-height : 30px;
+	
+}
+
+.border-left{
+	border-left : 1px solid #cec9c0;
+	text-indent : 5px;
+}
+
+.hidden{
+	display : none;
+}
+
+.text-align-middle{
+	text-align : center;
+}
+
+.textunderline{
+	text-decoration : underline;
+}
+
+.zipcode-title{
+	height : 30px;
+	font-size : 17px;
+	font-weight : bold;
+	line-height : 30px;
+	color : white;
+	background-color : #89868f;
+	text-indent : 5px;
+}
+
+.zipcode-red-desc{
+	text-indent : 5px;
+	color : red;
+	height : 30px;
+	line-height : 30px;
+	font-size : 14px;
+}
+
+.zipcode-desc{
+	text-indent : 5px;
+	color : gray;
+	height : 30px;
+	line-height : 30px;
+	font-size : 14px;
+}
+
+.zipcode-search-form{
+	text-indent : 5px;
+	font-weight : bold;
+	height : 30px;
+	line-height : 30px;
+	
+}
+
+#zipcodeResult{
+	width : 480px;
+}
+
+.zipcode-table{
+	width : 480px;
+	border-collapse:collapse;
+	border : 1px #89868f solid;
+	font-size : 13px;	
+	table-layout : fixed;
+}
+
+.zipcode-table td{
+	border-left : 1px #89868f solid;
+	border-bottom : 1px #89868f solid;
+	background : white;
+	text-align : left;
+}
+
+.zipcol-short{
+	width : 100px;
+	text-align : left;
+}
+
+.zipcol-long{
+	width : 275px;
+	text-align : left;	
+}
+
+.result-table-header td{
+	background-color : #89868f;
+	color : white;
+	font-weight : bold;
+}
+
+#confirmDiv{
+	display : none;
+	width : 175px;
+	border : 1px solid #2c0b64;
+	font-size : 13px;
+	text-align : center;
+}
+
+.confirm-title{
+	background-color : #2c0b64;
+	color : white;
+	font-size : 14px;
+	font-weight : bold;
+	text-align : center;
+	height : 50px;
+	line-height : 20px;
+	
+}
+
+#confirm-phone{
+	
+	text-align : center;
+}
